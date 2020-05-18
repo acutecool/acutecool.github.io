@@ -238,9 +238,21 @@
     </div>
   </div>
 
+<script>
+  if (audio) {
+  // 把audio.src设为null，并显式调用audio.load()，
+  // 此时对于Android会中断数据读取
+  audio.src = null;
+  audio.load();
+  }
+  else {
+  //  通过new
+  audio = new Audio();
+  }
 
+  audio.src = audioobj.mp3;
+  audio.play();
 
-
-
+</script>
 
 </html>
